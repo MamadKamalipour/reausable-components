@@ -1,0 +1,39 @@
+.DateRangePickerInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #a0a0a0;
+  .DateInput_1 {
+    padding: 11px 0;
+    .DateInput_input__focused {
+      border-color: transparent;
+    }
+    input {
+      font-size: 1.1rem;
+      line-height: 16px;
+      padding: 0;
+      text-align: center;
+      &::placeholder {
+        display: inline;
+        padding-right: 1rem;
+      }
+    }
+  }
+}
+.DateRangePicker {
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.DateRangePickerInput__showClearDates {
+  padding-right: 35px;
+}
+.DateRangePickerInput_clearDates {
+  top: 0;
+  transform: unset;
+  margin: 0px 22px 7px 0px;
+}
+.DateRangePickerInput_calendarIcon {
+  padding: 9px;
+  padding-top: 0px;
+}

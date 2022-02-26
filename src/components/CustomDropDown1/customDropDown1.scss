@@ -1,0 +1,14 @@
+.city__select{
+    color: #333;
+    width: 80%;
+    padding: 1rem;
+    &__label{
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: 10px ;
+        padding-right: 0;
+    }
+    &__input{
+        margin-top: 10px;
+    }
+}
