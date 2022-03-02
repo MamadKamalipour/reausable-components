@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 const CustomButton = ({
-  type, //primary , secondary, submit , cancel
+  type, //primary , secondary, submit , cancel , customBtn 
   onClickHandler,
   text,
   isDisabled,
