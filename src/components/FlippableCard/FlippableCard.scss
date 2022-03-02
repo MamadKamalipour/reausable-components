@@ -1,0 +1,126 @@
+$primary: #5f8d6e;
+$secondary: #8284c4;
+$dark: #494646;
+$light: #f3f3f3;
+$another: #ee9835;
+
+#flippableCard {
+  width: 300px;
+  height: 300px;
+  display: flex;
+
+  .divClass {
+    transform: translateZ(45px) scale(0.9);
+    height: 100%;
+  }
+
+  .card {
+    margin: 20px;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    -webkit-perspective: 600px;
+    -ms-perspective-origin-x: 50%;
+    -ms-perspective-origin-y: 50%;
+  }
+
+  .card__inner {
+    width: 100%;
+    height: 200px;
+    transition: all 4s;
+    cursor: pointer;
+
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    &:hover {
+      transform: rotateY(180deg);
+      transform-style: preserve-3d;
+      perspective: inherit;
+      transition: all 4s ease;
+    }
+    .card__inner__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      transform-style: preserve-3d;
+      opacity: 1;
+      transition: all 2.5s ease;
+      &:hover {
+        opacity: 0;
+      }
+    }
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+
+  .card__face--front {
+    background-color: transparent;
+    //   padding: 40px;
+    align-items: center;
+    //  justify-content: center;
+    text-align: center;
+    transform-style: preserve-3d;
+    h3 {
+      color: $light;
+      font-size: 30px;
+    }
+  }
+  .card__face--back {
+    background-image: linear-gradient(to bottom left, $primary, $secondary);
+    padding: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    h3 {
+      color: $light;
+      font-size: 30px;
+    }
+  }
+  .card__content {
+    width: 100%;
+    height: 100%;
+  }
+}
+.mainDesc {
+  color: $dark;
+  position: relative;
+  margin-bottom: 20px;
+}
+.titleDiv {
+  position: absolute;
+  display: inline-block;
+  top: 50px;
+  left: 10px;
+  color: $another;
+}
