@@ -2,6 +2,7 @@ import "./assets/fontawesome/pro/css/all.css";
 import VilaFinder from "./components/VilaFinder";
 import FlippableCard from "./components/FlippableCard/FlippableCard";
 import "./App.scss";
+import CustomButton from "./components/CustomButton/CustomButton";
 function App() {
   const cardData = [
     {
@@ -66,6 +67,16 @@ function App() {
           />
         ))}
       </div>
+      <CustomButton
+        type="primary"
+        text="سلام"
+        isDisabled={false}
+        icon="fa fa-home"
+        // csColor="#fff"
+        // csBgColor="yellow"
+        // csBorderColor="violet"
+        // csOnFocusBoxShadow=" 0 0 0 0.25rem rgb(238 130 238 / 87%)"
+      />
     </div>
   );
 }
