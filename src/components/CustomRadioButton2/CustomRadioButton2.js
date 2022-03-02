@@ -11,7 +11,6 @@ const CustomRadioButton2 = ({
   ActiveColor,
   onHoverBackground,
   onHoverColor,
-  value,
   onValueChange,
 }) => {
   const onChangeHandler = (value) => {
