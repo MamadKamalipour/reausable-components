@@ -38,6 +38,10 @@ const CustomRadioButton1 = ({
     width: 100%;
     margin-top: 10px;
     background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    .active {
+      background-color: ${(props) => props.bgColor};
+    }
     label {
       &:not(:last-child) {
         border-left: 0;
@@ -48,9 +52,9 @@ const CustomRadioButton1 = ({
       &:last-child {
         border-radius: 5px 0 0 5px;
       }
-      border: 1px solid #333;
-      padding: 1rem 2rem;
-      font-size: 80%;
+      border: 1px solid hsl(0, 0%, 70%);
+      padding: 1.2rem 1.3rem;
+      font-size: 90%;
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -72,16 +76,12 @@ const CustomRadioButton1 = ({
       <label htmlFor="" className="residence__type__label">
         {label}
       </label>
-      <RadioButtons className="residence__type__input">
+      <RadioButtons bgColor={mainColor} className="residence__type__input">
         {data.length < 5
           ? data.map((item) => (
               <label
                 key={item.value}
-                style={
-                  value === item.value
-                    ? { backgroundColor: mainColor }
-                    : {}
-                }
+                className={value === item.value ? "active" : ""}
                 htmlFor={item.htmlId}
               >
                 <span>{item.type}</span>

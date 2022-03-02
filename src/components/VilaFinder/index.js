@@ -1,20 +1,11 @@
 import React, { useState } from "react";
 import "./index.scss";
 import CustomDropDown1 from "../CustomDropDown1/CustomDropDown1";
-import CustomRadioButton1 from "../CustomRadioButton1/CustomRadioButton1";
+import CustomRadioButton2 from "../CustomRadioButton2/CustomRadioButton2";
 import backgroundImage from "../../assets/image/ramsar.jpg";
 import Hero from "../Hero/Hero";
-// date imports
-import "react-dates/initialize";
-import moment from "moment";
-import momentJalaali from "moment-jalaali";
-import DirectionProvider, {
-  DIRECTIONS,
-} from "react-with-direction/dist/DirectionProvider";
-
-import DateRangePickerWrapper from "../DatePickerComp/dist/examples/DateRangePickerWrapper";
-import "react-dates/lib/css/_datepicker.css";
-import "../DatePickerComp/DatePickerComp.scss";
+import DateRangePicker from "../DateRangePicker";
+import moment from "jalali-moment";
 const vilatypes = [
   {
     id: "1",
@@ -69,34 +60,20 @@ const peopleNum = [
 ];
 const VilaFinder = () => {
   // states
-
+  const convertMomentToRequireFormat = (date) => {
+    return date._i.split("-//")[0].replace(/-/g, "/");
+  };
   const [customDropDownValue, setCustomDropDownValue] = useState("");
   const [vilatype, setVilaType] = useState("");
-  const [date, setDate] = useState({
-    startDate: null,
-    endDate: null,
-    focusedInput: null,
+  const [dateValue, setDateValue] = useState({
+    start: moment().locale("fa").format("YYYY/MM/DD"),
+    end: moment().locale("fa").format("YYYY/MM/DD"),
   });
   const [peopleNumValue, setPeopleNumValue] = useState("");
 
-  // moment
-  moment.locale("fa");
-  momentJalaali.loadPersian({
-    dialect: "persian-modern",
-    usePersianDigits: true,
-    
-  });
-
-  const DateChangeHandler = ({ startDate, endDate }) => {
-    setDate({
-      // ...date,
-      startDate: startDate,
-      endDate: endDate,
-    });
-  };
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log({customDropDownValue, vilatype, date, peopleNumValue})
+    console.log({ customDropDownValue, vilatype, dateValue, peopleNumValue });
   };
 
   const onDropDownValueChange = (val) => {
@@ -109,9 +86,22 @@ const VilaFinder = () => {
   const peopleNumValueChange = (num) => {
     setPeopleNumValue(num);
   };
+
+  const onDateChangeHandler = (value) => {
+    setDateValue({
+      start: moment(convertMomentToRequireFormat(value.start))
+        .locale("fa")
+        .format("YYYY/MM/DD"),
+      end: moment(convertMomentToRequireFormat(value.end))
+        .locale("fa")
+        .format("YYYY/MM/DD"),
+    });
+  };
   return (
     <>
-      <Hero background={backgroundImage} overlayColor="rgba(0, 0, 0, 0.65)" />
+      <Hero background={backgroundImage} overlayColor="rgba(0, 0, 0, 0.65)">
+        {" "}
+      </Hero>
       <form onSubmit={onSubmitHandler} className="vilaFinder">
         <div className="vilaFinder__wrapper">
           {/* Location */}
@@ -125,43 +115,37 @@ const VilaFinder = () => {
             onValueChange={onDropDownValueChange}
           />
           {/* house type */}
-          <CustomRadioButton1
+          <CustomRadioButton2
             data={vilatypes}
             groupname="houseType"
             label="نوع اقامتگاه"
-            mainColor={"rgb(192 192 192 / 89%)"}
             value={vilatype}
             onValueChange={onVilaTypeChange}
+            backgroundColor="red"
+            borderColor="blue"
+            boxShadow="0 0 0 0.25rem rgba(255, 0, 0, 0.281)"
+            ActiveColor="#fff"
+            onHoverBackground="red"
+            onHoverColor="#fff"
           />
           {/* date */}
-          <DirectionProvider direction={DIRECTIONS.RTL}>
-            <DateRangePickerWrapper
-              DateChangeHandler={DateChangeHandler}
-              isRTL={true}
-              initialStartDate={date.startDate}
-              initialEndDate={date.endDate}
-              anchorDirection="right"
-              showDefaultInputIcon
-              hideKeyboardShortcutsPanel
-              showClearDates
-              stateDateWrapper={momentJalaali}
-              startDatePlaceholderText="تاریخ شروع"
-              endDatePlaceholderText="تاریخ پایان"
-              renderMonthText={(month) =>
-                momentJalaali(month).format("jMMMM jYYYY")
-              }
-              renderDayContents={(day) => momentJalaali(day).format("jD")}
-            />
-          </DirectionProvider>
-
+          <DateRangePicker
+            value={dateValue}
+            onValueChange={onDateChangeHandler}
+          />
           {/* People */}
-          <CustomRadioButton1
+          <CustomRadioButton2
             data={peopleNum}
             groupname="people"
             label="تعداد نفرات"
-            mainColor={"rgb(192 192 192 / 89%)"}
             value={peopleNumValue}
             onValueChange={peopleNumValueChange}
+            backgroundColor="red"
+            borderColor="blue"
+            boxShadow="0 0 0 0.25rem rgba(255, 0, 0, 0.281)"
+            ActiveColor="#fff"
+            onHoverBackground="red"
+            onHoverColor="#fff"
           />
           <button type="submit">submit</button>
         </div>
