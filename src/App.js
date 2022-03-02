@@ -2,9 +2,11 @@ import "./assets/fontawesome/pro/css/all.css";
 import VilaFinder from "./components/VilaFinder";
 import FlippableCard from "./components/FlippableCard/FlippableCard";
 import "./App.scss";
-import TopNavImage from "./assets/image/e556e92c-a57b-4f11-8eea-2b679d377b3e.jpg"
+import TopNavImage from "./assets/image/e556e92c-a57b-4f11-8eea-2b679d377b3e.jpg";
+import Logo from "./assets/image/logo.png"
 import CustomButton from "./components/CustomButton/CustomButton";
 import TopNavBanner from "./components/TopNavBanner/TopNavBanner";
+import Header from "./components/Header/Header";
 function App() {
   const cardData = [
     {
@@ -52,7 +54,8 @@ function App() {
   ];
   return (
     <div className="App">
-    <TopNavBanner image={TopNavImage} alt="top nav"  />
+      <TopNavBanner image={TopNavImage} alt="top nav" />
+      <Header logo={Logo} isSticky={true} />
       <VilaFinder />
       <div className="card-wrapper">
         {cardData.map((card) => (
