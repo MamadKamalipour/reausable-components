@@ -7,6 +7,7 @@ import Logo from "./assets/image/logo.png"
 import CustomButton from "./components/CustomButton/CustomButton";
 import TopNavBanner from "./components/TopNavBanner/TopNavBanner";
 import Header from "./components/Header/Header";
+import Heading from "./components/Heading/Heading";
 function App() {
   const cardData = [
     {
@@ -84,6 +85,7 @@ function App() {
         // csBorderColor="violet"
         // csOnFocusBoxShadow=" 0 0 0 0.25rem rgb(238 130 238 / 87%)"
       />
+      <Heading tag="h6"></Heading>
     </div>
   );
 }
