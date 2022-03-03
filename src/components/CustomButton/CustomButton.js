@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 const CustomButton = ({
-  type, //primary , secondary, submit , cancel , customBtn 
+  type, //primary , secondary, submit , cancel , customBtn
   onClickHandler,
   text,
   isDisabled,
@@ -11,6 +11,8 @@ const CustomButton = ({
   csBgColor,
   csBorderColor,
   csOnFocusBoxShadow,
+  style,
+  hoverColor
 }) => {
   const PrimaryBtn = styled.button`
     width: ${(props) => props.btnWidth};
@@ -28,7 +30,6 @@ const CustomButton = ({
   `;
   const SecondaryBtn = styled.button`
     width: ${(props) => props.btnWidth};
-
     &.secondary {
       color: #fff;
       background-color: #6c757d;
@@ -72,6 +73,7 @@ const CustomButton = ({
   const CustomBtn = styled.button`
     width: ${(props) => props.btnWidth};
     &.custom-color {
+      transition: all .5s linear;
       color: ${(props) => props.csColor};
       background-color: ${(props) => props.csBgColor};
       border-color: ${(props) => props.csBorderColor};
@@ -80,6 +82,10 @@ const CustomButton = ({
       }
       &:focus {
         box-shadow: ${(props) => props.csOnFocusBoxShadow};
+      }
+      &:hover{
+        opacity: .9;
+        color: ${props=>props.hoverColor};
       }
     }
   `;
@@ -91,8 +97,8 @@ const CustomButton = ({
           onClick={onClickHandler}
           btnWidth={btnWidth}
         >
-          {text}
           <i className={icon}></i>
+          {text}
         </PrimaryBtn>
       )}
       {type === "secondary" && (
@@ -101,8 +107,8 @@ const CustomButton = ({
           onClick={onClickHandler}
           btnWidth={btnWidth}
         >
-          {text}
           <i className={icon}></i>
+          {text}
         </SecondaryBtn>
       )}
       {type === "submit" && (
@@ -112,8 +118,8 @@ const CustomButton = ({
           onClick={onClickHandler}
           btnWidth={btnWidth}
         >
-          {text}
           <i className={icon}></i>
+          {text}
         </SubmitBtn>
       )}
       {type === "cancel" && (
@@ -122,8 +128,8 @@ const CustomButton = ({
           onClick={onClickHandler}
           btnWidth={btnWidth}
         >
-          {text}
           <i className={icon}></i>
+          {text}
         </CancelBtn>
       )}
       {type === "customBtn" && (
@@ -135,9 +141,11 @@ const CustomButton = ({
           csBgColor={csBgColor}
           csBorderColor={csBorderColor}
           csOnFocusBoxShadow={csOnFocusBoxShadow}
+          hoverColor={hoverColor}
+          style={style}
         >
-          {text}
           <i className={icon}></i>
+          {text}
         </CustomBtn>
       )}
     </>
