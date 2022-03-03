@@ -4,10 +4,12 @@ import FlippableCard from "./components/FlippableCard/FlippableCard";
 import "./App.scss";
 import TopNavImage from "./assets/image/e556e92c-a57b-4f11-8eea-2b679d377b3e.jpg";
 import Logo from "./assets/image/logo.png"
+import bannerImage from "./assets/image/c46cee67-3002-42cf-9ae5-65914200107c.jpg"
 import CustomButton from "./components/CustomButton/CustomButton";
 import TopNavBanner from "./components/TopNavBanner/TopNavBanner";
 import Header from "./components/Header/Header";
 import Heading from "./components/Heading/Heading";
+import Banner from "./components/Banner/Banner";
 function App() {
   const cardData = [
     {
@@ -86,6 +88,7 @@ function App() {
         // csOnFocusBoxShadow=" 0 0 0 0.25rem rgb(238 130 238 / 87%)"
       />
       <Heading tag="h6"></Heading>
+      <Banner link="https://www.google.com" image={bannerImage}/>
     </div>
   );
 }
