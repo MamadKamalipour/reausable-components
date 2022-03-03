@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-const Banner = ({ link, image }) => {
+const Banner = ({ link, image,className }) => {
   const BannerEl = styled.div`
     width: 100%;
     margin: 0 auto;
@@ -13,7 +13,6 @@ const Banner = ({ link, image }) => {
         width: 100%;
         height: 100%;
         position: relative;
-
         border-radius: 24px;
         padding-bottom: 23.571%;
         box-shadow: 0 0 10px 0 rgb(0 0 0 / 7%);
@@ -51,7 +50,7 @@ const Banner = ({ link, image }) => {
   `;
 
   return (
-    <BannerEl className="banner">
+    <BannerEl className={className}>
       <a href={link} target="_blank" rel="noreferrer">
         <figure>
           <img src={image} alt="banner" />
