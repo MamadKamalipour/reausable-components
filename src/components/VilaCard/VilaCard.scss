@@ -1,0 +1,98 @@
+.card {
+  direction: rtl;
+  max-width: 300px;
+  max-height: 500px;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  &__header {
+    direction: ltr;
+    width: 100%;
+    img {
+      border-radius: 5px;
+      margin-left: -12px;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__body {
+    padding: 5px;
+    &__rating {
+      display: flex;
+      align-content: center;
+      gap: 5px;
+      padding-top: 5px;
+      img {
+        width: 1.3rem;
+        height: 1.3rem;
+      }
+      p {
+        font-weight: bold;
+      }
+      span {
+        color: rgb(107, 107, 107);
+      }
+    }
+    &__title {
+      h2 {
+        text-align: right;
+        font-size: 1.3rem;
+      }
+    }
+    &__info {
+      color: rgb(107, 107, 107);
+      display: flex;
+      align-content: center;
+      gap: 5px;
+      .location {
+      }
+      .rooms {
+      }
+    }
+    &__price {
+      display: flex;
+      align-content: center;
+      gap: 5px;
+      s {
+      }
+      strong {
+      }
+      p {
+        color: rgb(107, 107, 107);
+      }
+    }
+  }
+  &__footer {
+    &__badges {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      margin: 0.5rem;
+
+      &--badge1 {
+        svg {
+          width: 15px;
+          height: 15px;
+          fill: #fff;
+        }
+        display: flex;
+        border-radius: 1rem;
+        background-color: #131b1f;
+        padding: 5px 10px;
+        font-weight: bold;
+      }
+      &--badge2 {
+        border-radius: 10px;
+        background-color: #fb3449;
+        border-radius: 1rem;
+        padding: 5px 10px;
+        font-weight: bold;
+      }
+      span {
+        color: #fff;
+      }
+    }
+  }
+}
