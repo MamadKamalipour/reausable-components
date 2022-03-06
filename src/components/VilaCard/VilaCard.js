@@ -7,9 +7,23 @@ const VilaCard = ({ data, gallery }) => {
     <>
       <div className="card" key={data.id}>
         <div className="card__header">
+          <div className="card__header__badges">
+            {data.isVerified && (
+              <div className="card__header__badges--badge1">
+                <span>کاربر تایید شده</span>
+              </div>
+            )}
+            {data.discountPresentage !== 0 ? (
+              <div className="card__header__badges--badge2">
+                <span>{data.discountPresentage}%</span>
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
           <Carousel
             additionalTransfrom={0}
-            arrows
+            arrows={false}
             autoPlay={false}
             autoPlaySpeed={10000}
             centerMode={false}
@@ -58,11 +72,6 @@ const VilaCard = ({ data, gallery }) => {
           </Carousel>
         </div>
         <div className="card__body">
-          <div className="card__body__rating">
-            <img src={starSvg} alt="starSvg" />
-            <p>{data.rating}</p>
-            <span>({data.voters})</span>
-          </div>
           <div className="card__body__title">
             <h2>{data.title}</h2>
           </div>
@@ -70,50 +79,27 @@ const VilaCard = ({ data, gallery }) => {
             <p className="location">{data.location}</p>
             <p className="rooms">-{data.rooms} اتاق</p>
           </div>
-          <div className="card__body__price">
+        </div>
+        <div className="card__footer">
+          <div className="card__footer__rating">
+            <img src={starSvg} alt="starSvg" />
+            <p>{data.rating}</p>
+          </div>
+          <div className="card__footer__price">
             {data.discountPresentage !== 0 ? (
               <>
                 <s>{data.price}</s>
-                <strong>{data.priceWithDiscount}</strong>
+                <strong style={{ color: "red" }}>
+                  {data.priceWithDiscount}
+                </strong>
               </>
             ) : (
               <strong>{data.price}</strong>
             )}
-
-            <strong>تومان</strong>
-            <p>/هرشب</p>
-          </div>
-        </div>
-        <div className="card__footer">
-          <div className="card__footer__badges">
-            {data.isInstanceReservation && (
-              <div className="card__footer__badges--badge1">
-                <span>
-                  <svg
-                    width="24px"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M17.6842 3.60279C18.2055 2.944 17.7132 2 16.8484 2H10.1317C9.75652 2 9.40996 2.19159 9.22321 2.50227L4.14052 10.9577C3.73978 11.6243 4.2439 12.4554 5.04904 12.4554H8.47764L5.24755 20.5203C4.78108 21.5406 6.04257 22.473 6.89092 21.735L20 9.33119H13.151L17.6842 3.60279Z"
-                      stroke="black"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  رزرو آنی و قطعی
-                </span>
-              </div>
-            )}
             {data.discountPresentage !== 0 ? (
-              <div className="card__footer__badges--badge2">
-                <span>{data.discountPresentage}% تخفیف</span>
-              </div>
+              <strong style={{ color: "red" }}>تومان</strong>
             ) : (
-              <div></div>
+              <strong>تومان</strong>
             )}
           </div>
         </div>
