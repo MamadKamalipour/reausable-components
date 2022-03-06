@@ -4,7 +4,6 @@ import CustomDropDown1 from "../CustomDropDown1/CustomDropDown1";
 import CustomRadioButton2 from "../CustomRadioButton2/CustomRadioButton2";
 import backgroundImage from "../../assets/image/ramsar.jpg";
 import Hero from "../Hero/Hero";
-import DateRangePicker from "../DateRangePicker";
 import moment from "jalali-moment";
 const vilatypes = [
   {
@@ -127,11 +126,6 @@ const VilaFinder = () => {
             ActiveColor="#fff"
             onHoverBackground="red"
             onHoverColor="#fff"
-          />
-          {/* date */}
-          <DateRangePicker
-            value={dateValue}
-            onValueChange={onDateChangeHandler}
           />
           {/* People */}
           <CustomRadioButton2
