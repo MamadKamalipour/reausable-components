@@ -82,7 +82,6 @@ function App() {
         icon="fa fa-home"
         // if type is CustomBtn
         // csColor="#fff"
-        // csBgColor="yellow"
         // csBorderColor="violet"
         // csOnFocusBoxShadow=" 0 0 0 0.25rem rgb(238 130 238 / 87%)"
       />
