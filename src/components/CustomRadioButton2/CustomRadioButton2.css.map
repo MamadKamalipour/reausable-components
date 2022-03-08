@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACV,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,GAAG,EAAE,IAAI;EACT,YAAY,EAAE,IAAI;CAOnB;;AANE,AAAD,qBAAS,CAAC;EACR,UAAU,EAAE,mBAAmB,CAAC,MAAM,CAAC,MAAM,CAAC,KAAK;CACpD;;AACA,AAAD,oBAAQ,CAAC;EACP,WAAW,EAAE,IAAI;CAClB",
+    "sources": [
+        "CustomRadioButton2.scss"
+    ],
+    "names": [],
+    "file": "CustomRadioButton2.css"
+}
