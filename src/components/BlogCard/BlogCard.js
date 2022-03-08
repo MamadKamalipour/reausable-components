@@ -5,7 +5,7 @@ import "./BlogCard.scss"
 function BlogCard({ data }) {
   return (
     <div className="blogcard">
-      <div className="blogcard__image">
+      <div className="blogcard__image ">
         <img src={data.image} alt={data.image} />
       </div>
       <div className="blogcard__conent">
