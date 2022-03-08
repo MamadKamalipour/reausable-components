@@ -14,7 +14,7 @@ import VilaCard from "./components/VilaCard/VilaCard";
 import Slider from "./components/Slider/Slider";
 import DateRangePickerComponent from "./components/DateRangePickerComponent/DateRangePickerComponent";
 import BlogCard from "./components/BlogCard/BlogCard";
-import Footer from './components/Footer/Footer'
+import Footer from "./components/Footer/Footer";
 function App() {
   const cardData = [
     {
@@ -41,7 +41,7 @@ function App() {
       status: "top",
       backgroundImageOverlay: "rgba(0, 0, 0, 0.44)",
       backDesc:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+        "Lorem Ipsum is dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
       backgroundImage:
         "https://cdn.jabama.com/image/jabama-images/1447261/034720d1-4929-4c0f-a151-1c1e417f4c5e.png",
     },
