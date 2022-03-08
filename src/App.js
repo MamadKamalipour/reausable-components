@@ -9,6 +9,7 @@ import CustomButton from "./components/CustomButton/CustomButton";
 import TopNavBanner from "./components/TopNavBanner/TopNavBanner";
 import Header from "./components/Header/Header";
 import Heading from "./components/Heading/Heading";
+import Footer from "./components/Footer/Footer";
 import Banner from "./components/Banner/Banner";
 import VilaCard from "./components/VilaCard/VilaCard";
 import Slider from "./components/Slider/Slider";
@@ -40,7 +41,7 @@ function App() {
       status: "top",
       backgroundImageOverlay: "rgba(0, 0, 0, 0.44)",
       backDesc:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+        "Lorem Ipsum is dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
       backgroundImage:
         "https://cdn.jabama.com/image/jabama-images/1447261/034720d1-4929-4c0f-a151-1c1e417f4c5e.png",
     },
@@ -290,11 +291,11 @@ function App() {
         icon="fa fa-home"
         // if type is CustomBtn
         // csColor="#fff"
-        // csBgColor="yellow"
         // csBorderColor="violet"
         // csOnFocusBoxShadow=" 0 0 0 0.25rem rgb(238 130 238 / 87%)"
       />
       <Heading tag="h6"></Heading>
+
       <Banner link="https://www.google.com" image={bannerImage} />
       <div
         id="card-container"
@@ -418,6 +419,7 @@ function App() {
           ))}
         </Slider>
       </div>
+      <Footer> </Footer>
     </div>
   );
 }

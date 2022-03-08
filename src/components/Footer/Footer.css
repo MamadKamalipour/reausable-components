@@ -1,0 +1,33 @@
+#mainFooter {
+  height: 100%;
+}
+
+#mainFooter .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 1rem;
+  padding: 3rem;
+  background-color: #f0ede6;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+#mainFooter .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#mainFooter .copyr {
+  position: relative;
+  bottom: 0;
+}
+/*# sourceMappingURL=Footer.css.map */
