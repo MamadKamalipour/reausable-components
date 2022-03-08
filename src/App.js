@@ -26,7 +26,7 @@ function App() {
         "https://cdn.jabama.com/image/jabama-images/1447261/557a9a44-c06b-4b7a-8d18-23295f6a33b3.png",
     },
     {
-      id: 2,
+      id:2,
       frontIcon: "fa fa-home",
       frontTitle: "front title 2",
       frontDesc: "front desc",
