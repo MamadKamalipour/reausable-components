@@ -1,0 +1,124 @@
+.card {
+  direction: rtl;
+  max-width: 300px;
+  max-height: 500px;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  position: relative;
+  &__header {
+    direction: ltr;
+    width: 100%;
+    &__badges {
+      direction: rtl;
+      width: 100%;
+      position: absolute;
+      font-size: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 2;
+      &--badge1 {
+
+        width: 0;
+        height: 0;
+        border-top: 5.5rem solid #333;
+        border-bottom: 5.5rem solid transparent;
+        border-left: 5.5rem solid transparent;
+        span {
+          width: 100px;
+          position: absolute;
+          top: 22px;
+          right: -18px;
+          text-align: center;
+          font-size: .7rem;
+          font-weight: bold;
+          transform: rotate(45deg);
+          display: block;
+        }
+      }
+      &--badge2 {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        background-color: #fb3449;
+        font-weight: bold;
+        border-radius: 50%;
+      }
+      span {
+        color: #fff;
+      }
+    }
+    img {
+      border-radius: 5px;
+      margin-left: -12px;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__body {
+    padding: 5px;
+    &__title {
+      h2 {
+        text-align: right;
+        font-size: 1.3rem;
+      }
+    }
+    &__info {
+      color: rgb(107, 107, 107);
+      display: flex;
+      align-content: center;
+      gap: 5px;
+      .location {
+      }
+      .rooms {
+      }
+    }
+  }
+  &__footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+
+    &__rating {
+      display: flex;
+      flex-direction: row-reverse;
+      align-content: center;
+      gap: 5px;
+      padding-top: 5px;
+      img {
+        width: 1.3rem;
+        height: 1.3rem;
+      }
+      p {
+        font-weight: bold;
+        margin: 0;
+      }
+      span {
+        color: rgb(107, 107, 107);
+      }
+    }
+    &__price {
+      display: flex;
+      align-content: center;
+      gap: 5px;
+      s {
+      }
+      strong {
+      }
+      p {
+        color: rgb(107, 107, 107);
+      }
+    }
+  }
+}

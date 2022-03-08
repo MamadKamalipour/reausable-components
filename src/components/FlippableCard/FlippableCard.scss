@@ -6,8 +6,8 @@ $another: #ee9835;
 
 #flippableCard {
   width: 300px;
-  height: 300px;
-  display: flex;
+  margin: 10px auto;
+  color: #fff;
 
   .divClass {
     transform: translateZ(45px) scale(0.9);
