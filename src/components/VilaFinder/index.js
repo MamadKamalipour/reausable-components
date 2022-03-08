@@ -4,7 +4,6 @@ import CustomDropDown1 from "../CustomDropDown1/CustomDropDown1";
 import CustomRadioButton2 from "../CustomRadioButton2/CustomRadioButton2";
 import backgroundImage from "../../assets/image/ramsar.jpg";
 import Hero from "../Hero/Hero";
-import moment from "jalali-moment";
 const vilatypes = [
   {
     id: "1",
@@ -58,25 +57,26 @@ const peopleNum = [
   },
 ];
 const VilaFinder = () => {
+  // const convertMomentToRequireFormat = (date) => {
+  //   return date._i.split("-//")[0].replace(/-/g, "/");
+  // };
   // states
-  const convertMomentToRequireFormat = (date) => {
-    return date._i.split("-//")[0].replace(/-/g, "/");
-  };
+
   const [customDropDownValue, setCustomDropDownValue] = useState("");
   const [vilatype, setVilaType] = useState("");
-  const [dateValue, setDateValue] = useState({
-    start: moment().locale("fa").format("YYYY/MM/DD"),
-    end: moment().locale("fa").format("YYYY/MM/DD"),
-  });
+  // const [dateValue, setDateValue] = useState({
+  //   startDate: null,
+  //   endDate: null,
+  //   focusedInput: null,
+  // });
   const [peopleNumValue, setPeopleNumValue] = useState("");
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log({ customDropDownValue, vilatype, dateValue, peopleNumValue });
+    console.log({ customDropDownValue, vilatype, peopleNumValue });
   };
 
   const onDropDownValueChange = (val) => {
-    console.log({ val });
     setCustomDropDownValue(val);
   };
   const onVilaTypeChange = (type) => {
@@ -86,16 +86,7 @@ const VilaFinder = () => {
     setPeopleNumValue(num);
   };
 
-  const onDateChangeHandler = (value) => {
-    setDateValue({
-      start: moment(convertMomentToRequireFormat(value.start))
-        .locale("fa")
-        .format("YYYY/MM/DD"),
-      end: moment(convertMomentToRequireFormat(value.end))
-        .locale("fa")
-        .format("YYYY/MM/DD"),
-    });
-  };
+
   return (
     <>
       <Hero background={backgroundImage} overlayColor="rgba(0, 0, 0, 0.65)">

@@ -12,6 +12,8 @@ import Heading from "./components/Heading/Heading";
 import Banner from "./components/Banner/Banner";
 import VilaCard from "./components/VilaCard/VilaCard";
 import Slider from "./components/Slider/Slider";
+import DateRangePickerComponent from "./components/DateRangePickerComponent/DateRangePickerComponent";
+import BlogCard from "./components/BlogCard/BlogCard";
 function App() {
   const cardData = [
     {
@@ -234,9 +236,35 @@ function App() {
       discountPresentage: 0,
     },
   ];
+  const blogData = [
+    {
+      id: 1,
+      image:
+        "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
+      title: "پست بلاگ آزمایشی",
+      description:
+        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و ",
+    },
+    {
+      id: 2,
+      image:
+        "https://i.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
+      title: "پست بلاگ آزمایشی",
+      description:
+        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و ",
+    },
+    {
+      id: 3,
+      image:
+        "https://i.picsum.photos/id/572/536/354.jpg?hmac=LH_xl3VtYKAAEcOQJpsrPecFrg-hDX3wQGexX5mmINM",
+      title: "پست بلاگ آزمایشی",
+      description:
+        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و ",
+    },
+  ];
   return (
     <div className="App">
-      <TopNavBanner image={TopNavImage} alt="top nav" />
+      {/* <TopNavBanner image={TopNavImage} alt="top nav" />
       <Header logo={Logo} isSticky={true} />
       <VilaFinder />
       <div className="card-wrapper">
@@ -272,22 +300,76 @@ function App() {
         id="card-container"
         style={{
           display: "flex",
-          flexWrap:"wrap",
+          flexWrap: "wrap",
           margin: "1rem auto",
           padding: "1rem",
           gap: "5px",
         }}
       >
         {vilaData.map((vila) => (
-          <VilaCard data={vila} gallery={vila.gallery} key={vila.id}  />
+          <VilaCard data={vila} gallery={vila.gallery} key={vila.id} />
         ))}
       </div>
-      <div className="vilaSlider" style={{ direction: "ltr"  , width: "80%" , margin:"1rem auto"}}>
-        
+      <div
+        className="vilaSlider"
+        style={{ direction: "ltr", width: "80%", margin: "1rem auto" }}
+      >
         <Slider>
-        
           {vilaData.map((vila) => (
             <VilaCard data={vila} gallery={vila.gallery} key={vila.id} />
+          ))}
+        </Slider>
+      </div>
+              <DateRangePickerComponent /> */}
+      <div style={{ height: "50%" }}>
+        <Slider
+          additionalTransfrom={0}
+          arrows={true}
+          autoPlaySpeed={3000}
+          centerMode={false}
+          className=""
+          containerClass="container-with-dots"
+          dotListClass=""
+          focusOnSelect={false}
+          infinite
+          itemClass=""
+          keyBoardControl
+          minimumTouchDrag={80}
+          renderButtonGroupOutside={false}
+          renderDotsOutside={false}
+          responsive={{
+            desktop: {
+              breakpoint: {
+                max: 3000,
+                min: 1024,
+              },
+              items: 1,
+              partialVisibilityGutter: 40,
+            },
+            mobile: {
+              breakpoint: {
+                max: 464,
+                min: 0,
+              },
+              items: 1,
+              partialVisibilityGutter: 30,
+            },
+            tablet: {
+              breakpoint: {
+                max: 1024,
+                min: 464,
+              },
+              items: 1,
+              partialVisibilityGutter: 30,
+            },
+          }}
+          showDots={false}
+          sliderClass=""
+          slidesToSlide={1}
+          swipeable
+        >
+          {blogData.map((blog) => (
+            <BlogCard data={blog} key={blog.id} />
           ))}
         </Slider>
       </div>
