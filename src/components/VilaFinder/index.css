@@ -1,0 +1,34 @@
+.placeholder {
+  font-weight: 300;
+  line-height: 1.25;
+  color: rgba(19, 27, 31, 0.5);
+  font-size: 14px;
+}
+
+.vilaFinder {
+  direction: rtl;
+}
+
+.vilaFinder i {
+  font-size: 20px;
+}
+
+.vilaFinder__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 7px;
+  width: 100%;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+/*# sourceMappingURL=index.css.map */
