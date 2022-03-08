@@ -9,15 +9,12 @@ import CustomButton from "./components/CustomButton/CustomButton";
 import TopNavBanner from "./components/TopNavBanner/TopNavBanner";
 import Header from "./components/Header/Header";
 import Heading from "./components/Heading/Heading";
-<<<<<<< HEAD
 import Banner from "./components/Banner/Banner";
 import VilaCard from "./components/VilaCard/VilaCard";
 import Slider from "./components/Slider/Slider";
 import DateRangePickerComponent from "./components/DateRangePickerComponent/DateRangePickerComponent";
 import BlogCard from "./components/BlogCard/BlogCard";
-=======
 import Footer from './components/Footer/Footer'
->>>>>>> sabraakhavan
 function App() {
   const cardData = [
     {
@@ -299,7 +296,6 @@ function App() {
         // csOnFocusBoxShadow=" 0 0 0 0.25rem rgb(238 130 238 / 87%)"
       />
       <Heading tag="h6"></Heading>
-<<<<<<< HEAD
       <Banner link="https://www.google.com" image={bannerImage} />
       <div
         id="card-container"
@@ -423,9 +419,6 @@ function App() {
           ))}
         </Slider>
       </div>
-=======
-      <Footer> </Footer>
->>>>>>> sabraakhavan
     </div>
   );
 }
