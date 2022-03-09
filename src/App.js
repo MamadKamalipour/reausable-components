@@ -86,7 +86,7 @@ function App() {
         // csOnFocusBoxShadow=" 0 0 0 0.25rem rgb(238 130 238 / 87%)"
       />
       <Heading tag="h6"></Heading>
-      <Footer> </Footer>
+      <Footer />
     </div>
   );
 }
