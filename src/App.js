@@ -521,7 +521,7 @@ function App() {
 
       <CustomCalendar />
       
-      <VilaFeauters/>
+      <VilaFeauters />
       <Footer />
       
     </div>
