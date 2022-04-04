@@ -377,6 +377,7 @@ function App() {
         // csOnFocusBoxShadow=" 0 0 0 0.25rem rgb(238 130 238 / 87%)"
       />
       <Heading tag="h6"></Heading>
+
       <Banner link="https://www.google.com" image={bannerImage} />
       <div
         id="card-container"
@@ -517,6 +518,7 @@ function App() {
 
         <Footer />
       </div>
+      <Footer> </Footer>
     </div>
   );
 }
