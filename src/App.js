@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./assets/fontawesome/pro/css/all.css";
 import VilaFinder from "./components/VilaFinder";
 import FlippableCard from "./components/FlippableCard/FlippableCard";
@@ -14,7 +15,89 @@ import Banner from "./components/Banner/Banner";
 import VilaCard from "./components/VilaCard/VilaCard";
 import Slider from "./components/Slider/Slider";
 import BlogCard from "./components/BlogCard/BlogCard";
+import Accordion from "./components/Accordion/Accordion";
+import FlipOnHover from "./components/FlippableCard/FlippableCard2";
+import FlippableCard2 from "./components/FlippableCard/FlippableCard2";
+import CalendarApp from "./components/CalendarApp/CalendarApp";
+import Table from "./components/Table/Table";
 import CustomCalendar from "./components/CustomCalendar/CustomCalendar";
+import VilaFeauters from "./components/VilaFeauters/VilaFeauters";
+
+
+const tableOption = [
+  {
+    id: 1,
+    title: "روابط شبکه‌­ای",
+    desc: "	ما به دنبال برقراری روابط میان فردی فراتر از سمت، سطح و واحد جهت آشنایی با تجارب و تخصص همدیگر و افزایش سرمایه اجتماعی سازمان هستیم.",
+  },
+  {
+    id: 2,
+    title: "تعهد حرفه­‌ای",
+    desc: "	ما به دنبال ارزیابی تعهد، در تمامی ابعاد آن بوده و به دنبال ارزش افزوده دو طرفه برای سازمان و همکارانمان هستیم.	ما به دنبال ارزیابی تعهد، در تمامی ابعاد آن بوده و به دنبال ارزش افزوده دو طرفه برای سازمان و همکارانمان هستیم.",
+  },
+  {
+    id: 3,
+    title: "توانمندسازی",
+    desc: "	ما به دنبال ارتقای دائمی دانش و مهارت‌­ها در ابعاد رفتاری و شغلی و بهینه‌­سازی توانایی‌­ها در راستانی نیازهای سازمان هستیم.",
+  },
+  {
+    id: 4,
+    title: "توسعه و تعالی",
+    desc: "	ما به دنبال تسهیل تعالی سازمان هستیم تا آنکه زمینه تعالی واحدهای سازمانی و خود را فراهم سازیم.",
+  },
+  {
+    id: 5,
+    title: "تیم‌سازی بهینه",
+    desc: "	ما برای ایده‌­های خود به دنبال تیمی خواهیم بود تا آن را به عمل رسانده و تبدیل به محصول کنیم.",
+  },
+];
+const FlippableCard2Items = [
+  // {
+  //   id: 1,
+  //   title: "fghjk",
+  //   desc: "dfghjk",
+  //   backTitle: "fghj",
+  // },
+  {
+    id: 2,
+    title: "fghjk",
+    desc: "dfghjk",
+    backTitle: "fghj",
+  },
+  {
+    id: 3,
+    title: "fghjk",
+    desc: "dfghjk",
+    backTitle: "fghj",
+  },
+];
+const items = [
+  {
+    id: 1,
+    htmlId: "Accordion1",
+    headingId: "head1",
+    label: "چطور در سایت ثبت نام کنم؟",
+    content:
+      "برای ثبت‌نام از منوی بالای صفحه به قسمت «ثبت‌نام» بروید و شماره تلفن همراه خود را وارد کنید، کلید ورود را بزنید، پیامکی حاوی یک کد شش رقمی دریافت می‌کنید این کد را در قسمت مربوط به کد وارد کنید. در مرحله‌ی بعد با وارد کردن اطلاعاتی شامل نام و نام‌خانوادگی و تعیین کلمه‌ی عبور ثبت نام شما کامل خواهد شد. شماره تلفن همراه شما بعدا به عنوان نام کاربری شما شناخته خواهد شد.",
+  },
+  {
+    id: 2,
+    htmlId: "Accordion2",
+    headingId: "head2",
+    label: "چقدر زمان میبرد که میزبان نسبت به درخواست رزرو پاسخگو باشد؟",
+    content:
+      "ما تلاش می‌کنیم که با آموزش مناسب به میزبان‌ها، آن‌ها را نسبت به پاسخگویی درخواست‌ها در کمترین زمان ممکن ترغیب نماییم.",
+  },
+  {
+    id: 3,
+    htmlId: "Accordion3",
+    headingId: "head3",
+    label: "هر اقامتگاه را برای چه مدت می‌توانم اجاره کنم؟",
+    content:
+      "حداقل و حداکثر زمان اجاره هر اقامتگاه در صفحه‌ی اقامتگاه توسط میزبان مشخص شده است.",
+  },
+];
+
 function App() {
   const cardData = [
     {
@@ -263,6 +346,7 @@ function App() {
         "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و ",
     },
   ];
+  const [date, setDate] = useState();
   return (
     <div className="App">
       <TopNavBanner image={TopNavImage} alt="top nav" />
@@ -295,6 +379,7 @@ function App() {
         // csOnFocusBoxShadow=" 0 0 0 0.25rem rgb(238 130 238 / 87%)"
       />
       <Heading tag="h6"></Heading>
+
       <Banner link="https://www.google.com" image={bannerImage} />
       <div
         id="card-container"
@@ -416,10 +501,29 @@ function App() {
             <BlogCard data={blog} key={blog.id} />
           ))}
         </Slider>
+        <div className="container">
+          <div className="row flex-column flex-md-row">
+            {FlippableCard2Items.map((card) => (
+              <div className="col-3" key={card.id}>
+                <FlippableCard2
+                  title={card.title}
+                  desc={card.desc}
+                  backTitle={card.backTitle}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <Accordion items={items} />
+        <Table data={tableOption} />
+
+
       </div>
+
       <CustomCalendar />
       
-      
+      <VilaFeauters/>
+      <Footer />
       
     </div>
   );

@@ -4,6 +4,7 @@ import "./Normalize.css";
 import "bootstrap/dist/css/bootstrap-grid.rtl.min.css";
 import "bootstrap/dist/css/bootstrap-utilities.rtl.min.css";
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
+import "bootstrap/dist/js/bootstrap.bundle"
 import "react-multi-carousel/lib/styles.css";
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
