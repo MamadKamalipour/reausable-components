@@ -13,8 +13,8 @@ import Footer from "./components/Footer/Footer";
 import Banner from "./components/Banner/Banner";
 import VilaCard from "./components/VilaCard/VilaCard";
 import Slider from "./components/Slider/Slider";
-import DateRangePickerComponent from "./components/DateRangePickerComponent/DateRangePickerComponent";
 import BlogCard from "./components/BlogCard/BlogCard";
+import CustomCalendar from "./components/CustomCalendar/CustomCalendar";
 function App() {
   const cardData = [
     {
@@ -365,7 +365,6 @@ function App() {
           ))}
         </Slider>
       </div>
-      <DateRangePickerComponent />
       <div style={{ height: "50%" }}>
         <Slider
           additionalTransfrom={0}
@@ -418,7 +417,11 @@ function App() {
           ))}
         </Slider>
       </div>
-      <Footer> </Footer>
+      <CustomCalendar />
+      
+      
+      <Footer />
+      
     </div>
   );
 }
