@@ -18,7 +18,6 @@ import BlogCard from "./components/BlogCard/BlogCard";
 import Accordion from "./components/Accordion/Accordion";
 import FlipOnHover from "./components/FlippableCard/FlippableCard2";
 import FlippableCard2 from "./components/FlippableCard/FlippableCard2";
-import CalendarApp from "./components/CalendarApp/CalendarApp";
 import Table from "./components/Table/Table";
 import CustomCalendar from "./components/CustomCalendar/CustomCalendar";
 import VilaFeauters from "./components/VilaFeauters/VilaFeauters";
