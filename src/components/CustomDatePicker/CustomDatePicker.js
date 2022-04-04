@@ -1,9 +1,10 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable no-extend-native */
 import React from "react";
-import DatePicker from "react-multi-date-picker";
+import DatePicker, { DateObject } from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
+import persian_en from "react-date-object/locales/persian_en";
 import weekends from "react-multi-date-picker/plugins/highlight_weekends";
 import "react-multi-date-picker/styles/layouts/mobile.css";
 import "./CustomDatePicker.scss";
@@ -37,8 +38,17 @@ function CustomDatePicker({ value, onValueChange }) {
     // console.log(e.format("YYYY/MM/DD"))
     onValueChange(e.format("YYYY/MM/DD"));
   };
+  const date = new DateObject({
+    date: new Date(),
+    calendar: persian,
+    locale: persian_en,
+  });
   return (
     <DatePicker
+      minDate={new DateObject({ calendar: persian }).set(
+        "day",
+        `${date.format("D")}`
+      )}
       value={value}
       onChange={onChangeHandler}
       weekDays={weekDays}
