@@ -11,10 +11,10 @@ const VilaFeauters = () => {
         </div>
         {/* button */}
         <div className="vila-feauters-button">
-            <input type="button" >  مشاهده همه امکانات</input>
+            <button type="submit" >  مشاهده همه امکانات</button>
         </div>
     </main>
-  )
+  )git 
 }
 
 export default VilaFeauters

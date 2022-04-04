@@ -14,13 +14,15 @@ import Footer from "./components/Footer/Footer";
 import Banner from "./components/Banner/Banner";
 import VilaCard from "./components/VilaCard/VilaCard";
 import Slider from "./components/Slider/Slider";
-import DateRangePickerComponent from "./components/DateRangePickerComponent/DateRangePickerComponent";
 import BlogCard from "./components/BlogCard/BlogCard";
 import Accordion from "./components/Accordion/Accordion";
 import FlipOnHover from "./components/FlippableCard/FlippableCard2";
 import FlippableCard2 from "./components/FlippableCard/FlippableCard2";
 import CalendarApp from "./components/CalendarApp/CalendarApp";
 import Table from "./components/Table/Table";
+import CustomCalendar from "./components/CustomCalendar/CustomCalendar";
+import VilaFeauters from "./components/VilaFeauters/VilaFeauters";
+
 
 const tableOption = [
   {
@@ -448,7 +450,6 @@ function App() {
           ))}
         </Slider>
       </div>
-      <DateRangePickerComponent />
       <div style={{ height: "50%" }}>
         <Slider
           additionalTransfrom={0}
@@ -516,9 +517,14 @@ function App() {
         <Accordion items={items} />
         <Table data={tableOption} />
 
-        <Footer />
+
       </div>
 
+      <CustomCalendar />
+      
+      <VilaFeauters/>
+      <Footer />
+      
     </div>
   );
 }
