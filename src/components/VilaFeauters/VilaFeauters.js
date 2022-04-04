@@ -14,7 +14,7 @@ const VilaFeauters = () => {
             <button type="submit" >  مشاهده همه امکانات</button>
         </div>
     </main>
-  )git 
+  )
 }
 
 export default VilaFeauters
