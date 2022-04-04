@@ -1,4 +1,3 @@
-import { map } from "jquery";
 import React from "react";
 import "./VilaFeatuers.scss";
 import { v4 } from "uuid";
