@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./index.scss";
 import CustomDropDown1 from "../CustomDropDown1/CustomDropDown1";
 import CustomRadioButton2 from "../CustomRadioButton2/CustomRadioButton2";
+import CustomDatePicker from "../CustomDatePicker/CustomDatePicker"
 import backgroundImage from "../../assets/image/ramsar.jpg";
 import Hero from "../Hero/Hero";
 const vilatypes = [
@@ -57,20 +58,9 @@ const peopleNum = [
   },
 ];
 const VilaFinder = () => {
-  // const convertMomentToRequireFormat = (date) => {
-  //   return date._i.split("-//")[0].replace(/-/g, "/");
-  // };
-  // states
-
   const [customDropDownValue, setCustomDropDownValue] = useState("");
   const [vilatype, setVilaType] = useState("");
-  // const [dateValue, setDateValue] = useState({
-  //   startDate: null,
-  //   endDate: null,
-  //   focusedInput: null,
-  // });
   const [peopleNumValue, setPeopleNumValue] = useState("");
-
   const onSubmitHandler = (e) => {
     e.preventDefault();
     console.log({ customDropDownValue, vilatype, peopleNumValue });
@@ -86,55 +76,58 @@ const VilaFinder = () => {
     setPeopleNumValue(num);
   };
 
-
   return (
     <>
       <Hero background={backgroundImage} overlayColor="rgba(0, 0, 0, 0.65)">
-        {" "}
+        <form onSubmit={onSubmitHandler} className="vilaFinder">
+          <div className="vilaFinder__wrapper">
+            {/* Location */}
+            <CustomDropDown1
+              data={cities}
+              type="single"
+              name="cities"
+              label="انتخاب شهر"
+              defaultValue={cities[0]}
+              value={customDropDownValue}
+              onValueChange={onDropDownValueChange}
+            />
+            {/* Date */}
+            <h5>تاریخ ورود</h5>
+            <CustomDatePicker />
+            <h5>تاریخ خروج</h5>
+            <CustomDatePicker />
+            {/* house type */}
+            <CustomRadioButton2
+              data={vilatypes}
+              groupname="houseType"
+              label="نوع اقامتگاه"
+              value={vilatype}
+              onValueChange={onVilaTypeChange}
+              backgroundColor="red"
+              borderColor="blue"
+              boxShadow="0 0 0 0.25rem rgba(255, 0, 0, 0.281)"
+              ActiveColor="#fff"
+              onHoverBackground="red"
+              onHoverColor="#fff"
+            />
+            {/* People */}
+            <CustomRadioButton2
+              data={peopleNum}
+              groupname="people"
+              label="تعداد نفرات"
+              value={peopleNumValue}
+              onValueChange={peopleNumValueChange}
+              backgroundColor="red"
+              borderColor="blue"
+              boxShadow="0 0 0 0.25rem rgba(255, 0, 0, 0.281)"
+              ActiveColor="#fff"
+              onHoverBackground="red"
+              onHoverColor="#fff"
+            />
+            <button type="submit">submit</button>
+          </div>
+        </form>
       </Hero>
-      <form onSubmit={onSubmitHandler} className="vilaFinder">
-        <div className="vilaFinder__wrapper">
-          {/* Location */}
-          <CustomDropDown1
-            data={cities}
-            type="single"
-            name="cities"
-            label="انتخاب شهر"
-            defaultValue={cities[0]}
-            value={customDropDownValue}
-            onValueChange={onDropDownValueChange}
-          />
-          {/* house type */}
-          <CustomRadioButton2
-            data={vilatypes}
-            groupname="houseType"
-            label="نوع اقامتگاه"
-            value={vilatype}
-            onValueChange={onVilaTypeChange}
-            backgroundColor="red"
-            borderColor="blue"
-            boxShadow="0 0 0 0.25rem rgba(255, 0, 0, 0.281)"
-            ActiveColor="#fff"
-            onHoverBackground="red"
-            onHoverColor="#fff"
-          />
-          {/* People */}
-          <CustomRadioButton2
-            data={peopleNum}
-            groupname="people"
-            label="تعداد نفرات"
-            value={peopleNumValue}
-            onValueChange={peopleNumValueChange}
-            backgroundColor="red"
-            borderColor="blue"
-            boxShadow="0 0 0 0.25rem rgba(255, 0, 0, 0.281)"
-            ActiveColor="#fff"
-            onHoverBackground="red"
-            onHoverColor="#fff"
-          />
-          <button type="submit">submit</button>
-        </div>
-      </form>
     </>
   );
 };

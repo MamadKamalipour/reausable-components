@@ -5,7 +5,8 @@ import DatePicker from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import weekends from "react-multi-date-picker/plugins/highlight_weekends";
-import "./CustomCalendar.scss";
+import "react-multi-date-picker/styles/layouts/mobile.css"
+import "./CustomDatePicker.scss";
 function CustomDatePicker() {
   const normalDayPrice = 1500;
   const fridayPrice = 2000;
@@ -35,10 +36,11 @@ function CustomDatePicker() {
 
   return (
     <DatePicker
-      className="custom-datePicker"
+    
       weekDays={weekDays}
       calendar={persian}
       locale={persian_fa}
+      calendarPosition={"bottom"}
       plugins={[weekends()]}
       mapDays={({ date }) => {
         let isWeekend = date.weekDay.index === 6;

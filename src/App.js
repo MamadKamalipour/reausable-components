@@ -420,7 +420,6 @@ function App() {
       <CustomCalendar />
       
       
-      <Footer />
       
     </div>
   );

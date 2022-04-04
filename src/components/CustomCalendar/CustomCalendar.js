@@ -50,7 +50,7 @@ function CustomCalendar() {
             style: { color: "#ccc" },
             onClick: () => alert("این تاریخ رزرو شده است"),
             children: (
-              <buatton
+              <button
                 data-toggle="tooltip"
                 data-placement="top"
                 title="این تاریخ رزرو شده است"
@@ -59,7 +59,7 @@ function CustomCalendar() {
                   <p className="custom-day">{date.format("D")}</p>
                   <small className="custom-day">رزرو شده</small>
                 </div>
-              </buatton>
+              </button>
             ),
           };
 
