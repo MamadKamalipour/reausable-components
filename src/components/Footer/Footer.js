@@ -79,7 +79,7 @@ const Footer = () => {
             <div className="col-12 col-md-6 col-lg-3 p-0 pt-3 text-right">
               <h4>شبکه های اجتماعی</h4>
               <ul>
-                <li>
+                {/* <li>
                   <a href="/">لینکدین</a>
                 </li>
                 <li>
@@ -93,7 +93,24 @@ const Footer = () => {
                 </li>
                 <li>
                   <a href="/">اپارات</a>
-                </li>
+                </li> */}
+                     <a href="/">
+                {" "}
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="/">
+                {" "}
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a href="/">
+                {" "}
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="/">
+                {" "}
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+
               </ul>
             </div>
           </div>
