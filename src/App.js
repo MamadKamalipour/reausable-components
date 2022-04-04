@@ -10,12 +10,12 @@ import CustomButton from "./components/CustomButton/CustomButton";
 import TopNavBanner from "./components/TopNavBanner/TopNavBanner";
 import Header from "./components/Header/Header";
 import Heading from "./components/Heading/Heading";
+import Footer from "./components/Footer/Footer";
 import Banner from "./components/Banner/Banner";
 import VilaCard from "./components/VilaCard/VilaCard";
 import Slider from "./components/Slider/Slider";
 import DateRangePickerComponent from "./components/DateRangePickerComponent/DateRangePickerComponent";
 import BlogCard from "./components/BlogCard/BlogCard";
-import Footer from "./components/Footer/Footer";
 import Accordion from "./components/Accordion/Accordion";
 import FlipOnHover from "./components/FlippableCard/FlippableCard2";
 import FlippableCard2 from "./components/FlippableCard/FlippableCard2";
@@ -518,7 +518,7 @@ function App() {
 
         <Footer />
       </div>
-      <Footer> </Footer>
+
     </div>
   );
 }
