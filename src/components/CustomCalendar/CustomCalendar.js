@@ -1,10 +1,11 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable no-extend-native */
 import React from "react";
 import { Calendar } from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import weekends from "react-multi-date-picker/plugins/highlight_weekends";
 import "./CustomCalendar.scss";
-import DatePicker from "react-multi-date-picker";
 function CustomCalendar() {
   const normalDayPrice = 1500;
   const fridayPrice = 2000;
