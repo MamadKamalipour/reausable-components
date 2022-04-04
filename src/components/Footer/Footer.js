@@ -2,9 +2,7 @@ import React from "react";
 import "./Footer.scss";
 
 const Footer = () => {
-  const hi = 'hi'
   return (
-    
     <main id="mainFooter">
       <div className="footer">
         {/* row 2 */}
