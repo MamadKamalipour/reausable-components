@@ -1,8 +1,8 @@
 import { map } from "jquery";
 import React from "react";
-import "./VilaFeauters.scss";
-
-const VilaFeauters = () => {
+import "./VilaFeatuers.scss";
+import { v4 } from "uuid";
+const VilaFeatuers = () => {
   const options = [
     {
       isValid: true,
@@ -35,7 +35,7 @@ const VilaFeauters = () => {
       icon: "fa-solid fa-air-conditioner",
     },
     {
-      isValid: true,
+      isValid: false,
       title: "پارکینگ",
       icon: "fa-solid fa-square-parking",
     },
@@ -46,15 +46,20 @@ const VilaFeauters = () => {
     },
   ];
   return (
-    <main id="mainVilaFeauters">
+    <main id="mainVilaFeatuers">
       {/* heading */}
-      <div className="vila-feauters-heading"> امکانات اقامتگاه</div>
+      <div className="vila-featuers-heading"> امکانات اقامتگاه</div>
       {/* options and icons */}
-      <div className="vila-feauters-option container">
-        <div className="vila-feauters">
+      <div className="vila-featuers-option container">
+        <div className="vila-featuers">
           {options.map((option) => {
             return (
-              <div key={Math.floor(Math.random() * 10)}>
+              <div
+              className={`${!option.isValid? "vila-feature-isvalid": ""}`}
+                key={v4()}
+
+                
+              >
                 <span>{option.title}</span>
                 <i class={option.icon}></i>
               </div>
@@ -64,7 +69,7 @@ const VilaFeauters = () => {
       </div>
       {/* button */}
       <div>
-        <button className="vila-feauters-button" type="submit">
+        <button className="vila-featuers-button" type="submit">
           مشاهده همه امکانات
         </button>
       </div>
@@ -72,4 +77,4 @@ const VilaFeauters = () => {
   );
 };
 
-export default VilaFeauters;
+export default VilaFeatuers;

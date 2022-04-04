@@ -20,7 +20,7 @@ import FlipOnHover from "./components/FlippableCard/FlippableCard2";
 import FlippableCard2 from "./components/FlippableCard/FlippableCard2";
 import Table from "./components/Table/Table";
 import CustomCalendar from "./components/CustomCalendar/CustomCalendar";
-import VilaFeauters from "./components/VilaFeauters/VilaFeauters";
+import VilaFeauters from "./components/VilaFeatuers/VilaFeatuers";
 
 
 const tableOption = [
