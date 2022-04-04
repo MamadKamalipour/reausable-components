@@ -6,7 +6,7 @@ import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import weekends from "react-multi-date-picker/plugins/highlight_weekends";
 import "./CustomCalendar.scss";
-function CustomCalendar() {
+function CustomCalendar({ value, onValueChange }) {
   const normalDayPrice = 1500;
   const fridayPrice = 2000;
   const weekDays = [
@@ -32,10 +32,15 @@ function CustomCalendar() {
   bookedDays.map((day) => {
     newBookedDays.push(day.toFaDigit());
   });
-
+  const onChangeHandler = (e) => {
+    // console.log(e.format("YYYY/MM/DD"))
+    onValueChange(e.format("YYYY/MM/DD"));
+  };
   return (
     <Calendar
       className="custom-calendar"
+      value={value}
+      onChange={onChangeHandler}
       weekDays={weekDays}
       calendar={persian}
       locale={persian_fa}
@@ -50,7 +55,7 @@ function CustomCalendar() {
             style: { color: "#ccc" },
             onClick: () => alert("این تاریخ رزرو شده است"),
             children: (
-              <button
+              <div
                 data-toggle="tooltip"
                 data-placement="top"
                 title="این تاریخ رزرو شده است"
@@ -59,7 +64,7 @@ function CustomCalendar() {
                   <p className="custom-day">{date.format("D")}</p>
                   <small className="custom-day">رزرو شده</small>
                 </div>
-              </button>
+              </div>
             ),
           };
 

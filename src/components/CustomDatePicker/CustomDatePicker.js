@@ -5,9 +5,9 @@ import DatePicker from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import weekends from "react-multi-date-picker/plugins/highlight_weekends";
-import "react-multi-date-picker/styles/layouts/mobile.css"
+import "react-multi-date-picker/styles/layouts/mobile.css";
 import "./CustomDatePicker.scss";
-function CustomDatePicker() {
+function CustomDatePicker({ value, onValueChange }) {
   const normalDayPrice = 1500;
   const fridayPrice = 2000;
   const weekDays = [
@@ -33,10 +33,14 @@ function CustomDatePicker() {
   bookedDays.map((day) => {
     newBookedDays.push(day.toFaDigit());
   });
-
+  const onChangeHandler = (e) => {
+    // console.log(e.format("YYYY/MM/DD"))
+    onValueChange(e.format("YYYY/MM/DD"));
+  };
   return (
     <DatePicker
-    
+      value={value}
+      onChange={onChangeHandler}
       weekDays={weekDays}
       calendar={persian}
       locale={persian_fa}
@@ -52,7 +56,7 @@ function CustomDatePicker() {
             style: { color: "#ccc" },
             onClick: () => alert("این تاریخ رزرو شده است"),
             children: (
-              <buatton
+              <div
                 data-toggle="tooltip"
                 data-placement="top"
                 title="این تاریخ رزرو شده است"
@@ -61,7 +65,7 @@ function CustomDatePicker() {
                   <p className="custom-day">{date.format("D")}</p>
                   <small className="custom-day">رزرو شده</small>
                 </div>
-              </buatton>
+              </div>
             ),
           };
 
