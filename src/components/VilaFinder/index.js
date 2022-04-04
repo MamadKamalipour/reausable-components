@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./index.scss";
 import CustomDropDown1 from "../CustomDropDown1/CustomDropDown1";
 import CustomRadioButton2 from "../CustomRadioButton2/CustomRadioButton2";
-import CustomDatePicker from "../CustomDatePicker/CustomDatePicker"
+import CustomDatePicker from "../CustomDatePicker/CustomDatePicker";
 import backgroundImage from "../../assets/image/ramsar.jpg";
 import Hero from "../Hero/Hero";
 const vilatypes = [
@@ -75,6 +75,8 @@ const VilaFinder = () => {
   const peopleNumValueChange = (num) => {
     setPeopleNumValue(num);
   };
+  const [startDate, setStartDate] = useState(new Date);
+  const [endDate, setEndDate] = useState(new Date);
 
   return (
     <>
@@ -93,9 +95,9 @@ const VilaFinder = () => {
             />
             {/* Date */}
             <h5>تاریخ ورود</h5>
-            <CustomDatePicker />
+            <CustomDatePicker value={startDate} onValueChange={(e) => setStartDate(e)} />
             <h5>تاریخ خروج</h5>
-            <CustomDatePicker />
+            <CustomDatePicker value={endDate} onValueChange={(e) => setEndDate(e)} />
             {/* house type */}
             <CustomRadioButton2
               data={vilatypes}
