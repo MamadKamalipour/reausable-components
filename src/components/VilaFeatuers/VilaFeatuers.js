@@ -1,6 +1,7 @@
 import React from "react";
 import "./VilaFeatuers.scss";
 import { v4 } from "uuid";
+import CustomModal from "../CustomModal/CustomModal"
 const VilaFeatuers = () => {
   const options = [
     {
@@ -54,24 +55,18 @@ const VilaFeatuers = () => {
           {options.map((option) => {
             return (
               <div
-              className={`${!option.isValid? "vila-feature-isvalid": ""}`}
+                className={`${!option.isValid ? "vila-feature-isvalid" : ""}`}
                 key={v4()}
-
-                
               >
                 <span>{option.title}</span>
-                <i class={option.icon}></i>
+                <i className={option.icon}></i>
               </div>
             );
           })}
         </div>
       </div>
       {/* button */}
-      <div>
-        <button className="vila-featuers-button" type="submit">
-          مشاهده همه امکانات
-        </button>
-      </div>
+     <CustomModal/> 
     </main>
   );
 };
