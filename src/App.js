@@ -21,8 +21,6 @@ import FlippableCard2 from "./components/FlippableCard/FlippableCard2";
 import Table from "./components/Table/Table";
 import CustomCalendar from "./components/CustomCalendar/CustomCalendar";
 import VilaFeauters from "./components/VilaFeatuers/VilaFeatuers";
-
-
 const tableOption = [
   {
     id: 1,
@@ -345,7 +343,7 @@ const blogData = [
   },
 ];
 function App() {
-  const [selectedDate, setSelectedDate] = useState(new Date);
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
   return (
     <div className="App">
@@ -516,15 +514,15 @@ function App() {
         </div>
         <Accordion items={items} />
         <Table data={tableOption} />
-
-
       </div>
 
-      <CustomCalendar value={selectedDate} onValueChange={(e) => setSelectedDate(e)}/>
-      
+      <CustomCalendar
+        value={selectedDate}
+        onValueChange={(e) => setSelectedDate(e)}
+      />
+
       <VilaFeauters />
       <Footer />
-      
     </div>
   );
 }
