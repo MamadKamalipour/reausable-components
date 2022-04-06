@@ -348,7 +348,7 @@ function App() {
   return (
     <div className="App">
       <TopNavBanner image={TopNavImage} alt="top nav" />
-      <Header logo={Logo} isSticky={true} />
+      <Header logo={Logo} isSticky={false} />
       <VilaFinder />
       <div className="card-wrapper">
         {cardData.map((card) => (
