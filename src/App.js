@@ -22,6 +22,7 @@ import Table from "./components/Table/Table";
 import CustomCalendar from "./components/CustomCalendar/CustomCalendar";
 import VilaFeauters from "./components/VilaFeatuers/VilaFeatuers";
 import HostInfoCard from "./components/HostInfoCard/HostInfoCard";
+
 const tableOption = [
   {
     id: 1,
@@ -425,6 +426,68 @@ const options = [
     icon: "fa-solid fa-plug",
   },
 ];
+const hostInfoOptions = [
+  {
+    userName: "person1",
+    profilePic: "./assets/image/avatar.png",
+    fullName: " صبرا اخوان ",
+    visited: "5 بار دیده شده ",
+    verified: "تایید شده",
+    rate: "میزبان برتر",
+    biography: "sth",
+    rateName: "میزبان برتر",
+    rateInfo: "sth",
+    contactbutton: "sdfghjk",
+  },
+  {
+    userName: "person1",
+    profilePic: "./assets/image/avatar.png",
+    fullName: " صبرا اخوان ",
+    visited: "5 بار دیده شده ",
+    verified: "تایید شده",
+    rate: "میزبان برتر",
+    biography: "sth",
+    rateName: "میزبان برتر",
+    rateInfo: "sth",
+    contactbutton: "sdfghjk",
+  },
+  {
+    userName: "person1",
+    profilePic: "./assets/image/avatar.png",
+    fullName: " صبرا اخوان ",
+    visited: "5 بار دیده شده ",
+    verified: "تایید شده",
+    rate: "میزبان برتر",
+    biography: "sth",
+    rateName: "میزبان برتر",
+    rateInfo: "sth",
+    contactbutton: "sdfghjk",
+  },
+  {
+    userName: "person1",
+    profilePic: "./assets/image/avatar.png",
+    fullName: " صبرا اخوان ",
+    visited: "5 بار دیده شده ",
+    verified: "تایید شده",
+    rate: "میزبان برتر",
+    biography: "sth",
+    rateName: "میزبان برتر",
+    rateInfo: "sth",
+    contactbutton: "sdfghjk",
+  },
+  {
+    userName: "person1",
+    profilePic: "./assets/image/avatar.png",
+    fullName: " صبرا اخوان ",
+    visited: "5 بار دیده شده ",
+    verified: "تایید شده",
+    rate: "میزبان برتر",
+    biography: "sth",
+    rateName: "میزبان برتر",
+    rateInfo: "sth",
+    contactbutton: "sdfghjk",
+  },
+];
 function App() {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
@@ -605,7 +668,7 @@ function App() {
       />
 
       <VilaFeauters vilaOptions={options} />
-      <HostInfoCard/>
+      <HostInfoCard />
       <Footer />
     </div>
   );
