@@ -21,6 +21,8 @@ import FlippableCard2 from "./components/FlippableCard/FlippableCard2";
 import Table from "./components/Table/Table";
 import CustomCalendar from "./components/CustomCalendar/CustomCalendar";
 import VilaFeauters from "./components/VilaFeatuers/VilaFeatuers";
+import HostInfoCard from "./components/HostInfoCard/HostInfoCard";
+
 const tableOption = [
   {
     id: 1,
@@ -342,13 +344,157 @@ const blogData = [
       "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و ",
   },
 ];
+const options = [
+  {
+    isValid: false,
+    title: "حمام",
+    icon: "fa-solid fa-shower",
+  },
+  {
+    isValid: false,
+    title: "گاز",
+    icon: "fa-solid fa-fire-flame-simple",
+  },
+  {
+    isValid: true,
+    title: "آب",
+    icon: "fa-solid fa-faucet-drip",
+  },
+  {
+    isValid: true,
+    title: "مبلمان",
+    icon: "fa-solid fa-couch",
+  },
+  {
+    isValid: true,
+    title: "سرویس بهداشتی",
+    icon: "fa-solid fa-toilet-paper",
+  },
+  {
+    isValid: true,
+    title: "کولر",
+    icon: "fa-solid fa-air-conditioner",
+  },
+  {
+    isValid: false,
+    title: "پارکینگ",
+    icon: "fa-solid fa-square-parking",
+  },
+  {
+    isValid: true,
+    title: "برق",
+    icon: "fa-solid fa-plug",
+  },
+  {
+    isValid: true,
+    title: "حمام",
+    icon: "fa-solid fa-shower",
+  },
+  {
+    isValid: true,
+    title: "گاز",
+    icon: "fa-solid fa-fire-flame-simple",
+  },
+  {
+    isValid: true,
+    title: "آب",
+    icon: "fa-solid fa-faucet-drip",
+  },
+  {
+    isValid: true,
+    title: "مبلمان",
+    icon: "fa-solid fa-couch",
+  },
+  {
+    isValid: true,
+    title: "سرویس بهداشتی",
+    icon: "fa-solid fa-toilet-paper",
+  },
+  {
+    isValid: true,
+    title: "کولر",
+    icon: "fa-solid fa-air-conditioner",
+  },
+  {
+    isValid: false,
+    title: "پارکینگ",
+    icon: "fa-solid fa-square-parking",
+  },
+  {
+    isValid: true,
+    title: "برق",
+    icon: "fa-solid fa-plug",
+  },
+];
+const hostInfoOptions = [
+  {
+    userName: "person1",
+    profilePic: "./assets/image/avatar.png",
+    fullName: " صبرا اخوان ",
+    visited: "5 بار دیده شده ",
+    verified: "تایید شده",
+    rate: "میزبان برتر",
+    biography: "sth",
+    rateName: "میزبان برتر",
+    rateInfo: "sth",
+    contactbutton: "sdfghjk",
+  },
+  {
+    userName: "person1",
+    profilePic: "./assets/image/avatar.png",
+    fullName: " صبرا اخوان ",
+    visited: "5 بار دیده شده ",
+    verified: "تایید شده",
+    rate: "میزبان برتر",
+    biography: "sth",
+    rateName: "میزبان برتر",
+    rateInfo: "sth",
+    contactbutton: "sdfghjk",
+  },
+  {
+    userName: "person1",
+    profilePic: "./assets/image/avatar.png",
+    fullName: " صبرا اخوان ",
+    visited: "5 بار دیده شده ",
+    verified: "تایید شده",
+    rate: "میزبان برتر",
+    biography: "sth",
+    rateName: "میزبان برتر",
+    rateInfo: "sth",
+    contactbutton: "sdfghjk",
+  },
+  {
+    userName: "person1",
+    profilePic: "./assets/image/avatar.png",
+    fullName: " صبرا اخوان ",
+    visited: "5 بار دیده شده ",
+    verified: "تایید شده",
+    rate: "میزبان برتر",
+    biography: "sth",
+    rateName: "میزبان برتر",
+    rateInfo: "sth",
+    contactbutton: "sdfghjk",
+  },
+  {
+    userName: "person1",
+    profilePic: "./assets/image/avatar.png",
+    fullName: " صبرا اخوان ",
+    visited: "5 بار دیده شده ",
+    verified: "تایید شده",
+    rate: "میزبان برتر",
+    biography: "sth",
+    rateName: "میزبان برتر",
+    rateInfo: "sth",
+    contactbutton: "sdfghjk",
+  },
+];
 function App() {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   return (
     <div className="App">
       <TopNavBanner image={TopNavImage} alt="top nav" />
-      <Header logo={Logo} isSticky={true} />
+      <Header logo={Logo} isSticky={false} />
       <VilaFinder />
       <div className="card-wrapper">
         {cardData.map((card) => (
@@ -521,7 +667,8 @@ function App() {
         onValueChange={(e) => setSelectedDate(e)}
       />
 
-      <VilaFeauters />
+      <VilaFeauters vilaOptions={options} />
+      <HostInfoCard />
       <Footer />
     </div>
   );
