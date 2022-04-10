@@ -4,11 +4,12 @@
   padding: 2rem;
   direction: rtl;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   @media (max-width: 767px) {
     display: inline-block;
   }
   .first-container-card {
+    width: 80%;
     padding: 1rem;
     &__heading {
       &__avatar {
@@ -36,19 +37,28 @@
     }
   }
   .second-container-card {
+    width: 20%;
     padding: 2rem;
     &__heading {
       direction: rtl;
     }
     &__button {
+      padding: .5rem;
+      font-weight: bold;
       margin: 1rem 0 ;
-      font-size: 16px;
+      text-decoration: none;
+      font-size: .8rem;
       outline: unset;
       border: 0;
       border-radius: 5px;
-      color: darkslateblue;
-      box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-        rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+      color: #333;
+      border: 1px solid #333;
+      transition: all 200ms linear;
+      &:hover{
+        background-color: #333;
+        color: #fff;
+
+      }
     }
     &__tip {
       span {

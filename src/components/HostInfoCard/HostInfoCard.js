@@ -1,67 +1,69 @@
 import React from "react";
 import "./HostInfoCard.scss";
-import Avatar from "../../assets/image/avatar.png";
 
-const HostInfoCard = () => {
+const HostInfoCard = ({ data }) => {
+  const person = data[0];
+  console.log(person);
   return (
     <main id="mainHostInfoCard">
       <div className="first-container-card">
         <div className="first-container-card__heading">
           <img
             className="first-container-card__heading__avatar"
-            src={Avatar}
+            src={person.profilePic}
             alt="Host image"
           />
-          <h3> نام و نام خانوادگی</h3>
-          <span className="graytext">18 فروردین 1400 </span>
+          <h3>{person.fullName}</h3>
+          <span className="graytext">{person.joinedDate} </span>
         </div>
         <div className="first-container-card__underheading">
           <span>
-            <i class="fa-solid fa-star "></i> 50 بار دیده شده
+            <i className="fa-solid fa-star "></i>
+            {`${person.visited} بار دیده شده`}
           </span>
-          <span>
-            <i class="fa-solid fa-badge-check"></i> تایید شده
-          </span>
+          {person.verified ? (
+            <span>
+              <i className="fa-solid fa-badge-check"></i> تایید شده
+            </span>
+          ) : null}
 
-          <span>
-            <i class="fa-solid fa-circle-heart"></i> میزبان برتر
-          </span>
+          {person.rate > 8 ? (
+            <span>
+              <i className="fa-solid fa-circle-heart"></i> میزبان برتر
+            </span>
+          ) : (
+            <span>
+              <i className="fa-solid fa-circle-heart"></i> امتیاز کاربر:{" "}
+              {person.rate}
+            </span>
+          )}
         </div>
         <div className="first-container-card__body">
           <p>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
-            ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
-            و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای
-            زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
-            متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان
-            رایانه ای علی الخصوص طراحان خ طراحی اساسا مورد استفاده قرار گیرد.
+            {person.locationBtio}
           </p>
         </div>
         <div className="first-container-card__footer">
           <h6>لورم ایپسوم</h6>
           <p className="graytext">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و 
           </p>
         </div>
       </div>
       <div className="second-container-card">
-        {/* <div className="second-container-card__heading">
-          <span className="graytext">100%:امتیاز بازخورد</span>
-          <br />
-          <span className="graytext"> 1h :مدت زمان بازدید میانگین</span>
-        </div> */}
         <div>
-          <button className="second-container-card__button" type="submit">
+          <a
+            href={`phoneto:${person.phoneNumber}`}
+            className="second-container-card__button"
+            type="submit"
+          >
             ارتباط با میزبان
-          </button>
+          </a>
         </div>
         <div className="second-container-card__tip">
           <span>
-            <i class="fa-solid fa-note"></i>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-            استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
-            ستون و سطرآنچنان که لازم است
+            <i className="fa-solid fa-note"></i>
+            {person.rateInfo}
           </span>
         </div>
       </div>
