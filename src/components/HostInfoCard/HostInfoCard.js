@@ -2,8 +2,7 @@ import React from "react";
 import "./HostInfoCard.scss";
 
 const HostInfoCard = ({ data }) => {
-  const person = data[0];
-  console.log(person);
+  const person = data[1];
   return (
     <main id="mainHostInfoCard">
       <div className="first-container-card">
